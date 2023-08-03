@@ -55,17 +55,7 @@ const Element = forwardRef(({
       await factory.createElement(slug, containerRef.current);
   };
 
-  const destroy = async () => {
-    if (!elementRef.current) {
-      return;
-    }
-
-    if (containerRef.current) {
-      containerRef.current.innerHTML = '';
-    }
-
-    await elementRef.current.destroy();
-  };
+  const destroy = () => elementRef.current?.destroy();
 
   return <Tag ref={containerRef} id={id} {...rest} />;
 });
