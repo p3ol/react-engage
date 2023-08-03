@@ -1,6 +1,5 @@
-import { useEffect, useImperativeHandle, useReducer, forwardRef } from 'react';
+import { useEffect, useImperativeHandle, useRef, forwardRef } from 'react';
 import PropTypes from 'prop-types';
-import { mockState } from '@junipero/core';
 
 import { useEngage } from '../hooks';
 
@@ -12,9 +11,7 @@ const Elements = forwardRef(({
   texts,
   events,
 }, ref) => {
-  const [state, dispatch] = useReducer(mockState, {
-    elements: [],
-  });
+  const elementsRef = useRef([]);
   const {
     lib,
     factory: globalFactory,
@@ -22,7 +19,7 @@ const Elements = forwardRef(({
   } = useEngage();
 
   useImperativeHandle(ref, () => ({
-    elementsRef: state.elements,
+    elementsRef,
     destroy,
   }));
 
@@ -46,14 +43,11 @@ const Elements = forwardRef(({
       return;
     }
 
-    state.elements = await factory.autoCreate(filters);
-    dispatch({ elements: state.elements });
+    elementsRef.current = await factory.autoCreate(filters);
   };
 
-  const destroy = async () => {
-    await Promise.all(state.elements.map(element => element.destroy()));
-    state.elements = [];
-  };
+  const destroy = () =>
+    Promise.all(elementsRef.current.map(element => element.destroy()));
 
   return null;
 });
