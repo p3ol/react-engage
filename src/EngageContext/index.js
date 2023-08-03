@@ -62,7 +62,11 @@ const EngageContext = ({
       .entries(events || {})
       .concat(Object.entries(opts.events || {}))
       .forEach(([event, callback]) => {
-        factory.on(event, callback, { once: !!callback?.once });
+        factory.on(
+          event,
+          callback?.callback || callback,
+          { once: !!callback?.once }
+        );
       });
 
     return factory;
