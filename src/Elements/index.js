@@ -62,7 +62,7 @@ Elements.displayName = 'Elements';
 
 Elements.propTypes = {
   useGlobalFactory: PropTypes.bool,
-  filters: PropTypes.object,
+  filters: PropTypes.arrayOf(PropTypes.string),
   config: PropTypes.object,
   variables: PropTypes.object,
   texts: PropTypes.object,
