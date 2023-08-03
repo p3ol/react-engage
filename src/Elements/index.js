@@ -17,10 +17,8 @@ const Elements = forwardRef(({
   });
   const {
     lib,
-    factory:
-    globalFactory,
+    factory: globalFactory,
     createFactory,
-    destroyFactory,
   } = useEngage();
 
   useImperativeHandle(ref, () => ({
@@ -54,7 +52,6 @@ const Elements = forwardRef(({
 
   const destroy = async () => {
     await Promise.all(state.elements.map(element => element.destroy()));
-    destroyFactory();
     state.elements = [];
   };
 

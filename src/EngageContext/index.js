@@ -68,14 +68,6 @@ const EngageContext = ({
     return factory;
   };
 
-  const destroyFactory = () => {
-    if (!state.factory) {
-      return;
-    }
-
-    dispatch({ factory: null });
-  };
-
   const commitPageView = () => {
     if (!state.factory) {
       return;
@@ -94,7 +86,6 @@ const EngageContext = ({
     lib: state.lib,
     factory: state.factory,
     createFactory,
-    destroyFactory,
     commitPageView,
   }), [state.lib, state.factory]);
 
