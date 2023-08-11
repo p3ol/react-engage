@@ -1,3 +1,5 @@
+![CI](https://github.com/p3ol/react-engage/workflows/CI/badge.svg)
+
 # Poool Engage - React SDK
 
 > The easiest way to add Poool Engage to your React app ✨
