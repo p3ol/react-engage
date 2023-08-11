@@ -5,7 +5,7 @@
 ## Installation
 
 ```bash
-yarn add @poool/react-engage
+npm install @poool/react-engage
 ```
 
 ## Usage
@@ -115,19 +115,19 @@ Please check the [CONTRIBUTING.md](https://github.com/p3ol/react-engage/blob/mai
 Install dependencies:
 
 ```bash
-yarn install
+npm install
 ```
 
 Run examples at http://localhost:63001/ with webpack dev server:
 
 ```bash
-yarn serve
+npm run serve
 ```
 
 And test your code:
 
 ```bash
-yarn test
+npm test
 ```
 
 ## License
