@@ -5,9 +5,8 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import terser from '@rollup/plugin-terser';
 
-const isForIE = process.env.BABEL_ENV === 'ie';
 const input = './src/index.js';
-const output = `./dist${isForIE ? '/ie' : ''}`;
+const output = './dist';
 const name = 'poool-react-engage';
 const formats = ['umd', 'cjs', 'esm'];
 
