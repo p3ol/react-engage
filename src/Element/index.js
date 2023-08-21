@@ -50,7 +50,7 @@ const Element = forwardRef(({
         await factory.createElement(slug, containerRef.current);
 
       if (!mounted) {
-        // the component has be unmounted before the element was created
+        // the component has been unmounted before the element was created
         destroy();
       }
     })();

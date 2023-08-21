@@ -41,7 +41,7 @@ const Elements = forwardRef(({
       elementsRef.current = await factory.autoCreate(filters);
 
       if (!mounted) {
-        // the component has be unmounted before elements were created
+        // the component has been unmounted before elements were created
         destroy();
       }
     })();
