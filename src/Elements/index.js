@@ -24,27 +24,33 @@ const Elements = forwardRef(({
   }));
 
   useEffect(() => {
-    create();
+    let mounted = true;
+
+    (async () => {
+      const factory = useGlobalFactory ? globalFactory : createFactory?.({
+        config,
+        variables,
+        texts,
+        events,
+      });
+
+      if (!factory) {
+        return;
+      }
+
+      elementsRef.current = await factory.autoCreate(filters);
+
+      if (!mounted) {
+        // the component has be unmounted before elements were created
+        destroy();
+      }
+    })();
 
     return () => {
+      mounted = false;
       destroy();
     };
   }, [lib, globalFactory, filters, config, variables, texts, events]);
-
-  const create = async () => {
-    const factory = useGlobalFactory ? globalFactory : createFactory?.({
-      config,
-      variables,
-      texts,
-      events,
-    });
-
-    if (!factory) {
-      return;
-    }
-
-    elementsRef.current = await factory.autoCreate(filters);
-  };
 
   const destroy = () => elementsRef.current &&
     Promise.all(elementsRef.current.map(element => element.destroy()));

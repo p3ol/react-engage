@@ -82,4 +82,21 @@ describe('<Elements />', () => {
     await waitFor(() => expect(autoCreate).toHaveBeenCalled());
     await waitFor(() => expect(destroy).toHaveBeenCalled());
   });
+
+  it('should destroy elements when component is unmounted', async () => {
+    const destroy = jest.fn().mockReturnValue(Promise.resolve());
+    const autoCreate = jest.fn().mockReturnValue(
+      new Promise(resolve => setTimeout(() => resolve([{ destroy }])), 100)
+    );
+
+    const { unmount } = render(withEngage(
+      <Elements />,
+      { factory: { autoCreate } }
+    ));
+
+    unmount();
+
+    await waitFor(() => expect(autoCreate).toHaveBeenCalled());
+    await waitFor(() => expect(destroy).toHaveBeenCalledTimes(1));
+  });
 });
