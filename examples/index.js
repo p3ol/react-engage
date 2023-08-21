@@ -4,6 +4,10 @@ import { mockState } from '@junipero/core';
 import { EngageContext, Element, Elements } from '@poool/react-engage';
 
 const App = () => {
+  if (!document.referrer) {
+    location.reload();
+  }
+
   const [state, dispatch] = useReducer(mockState, {
     mode: 'auto',
   });
@@ -16,6 +20,7 @@ const App = () => {
         onClick={
           () => dispatch({ mode: state.mode === 'auto' ? 'slug' : 'auto' })
         }
+        id="SwitchMode"
       >
       Switch to { state.mode === 'auto' ? 'slug' : 'auto' } mode
       </button>
