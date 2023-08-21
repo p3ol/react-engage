@@ -79,7 +79,7 @@ export default = () => {
 
 - `useGlobalFactory` {`Boolean`} (optional, default: `true`) Whether to use the factory from `<EngageContext />` or not
 - `filters` {`Array<String>`} (optional) List of filters to apply to the elements
-- `config` {`Object`} (optional) Element config, overrides `<EngageContext />`'s one (see the [configuration](https://poool.dev/docs/engage/javascript/configuration) documentation)
+- `config` {`Object`} (optional) Element config, overrides `<EngageContext />`'s ones (see the [configuration](https://poool.dev/docs/engage/javascript/configuration) documentation)
 - `variables` {`Object`} (optional) Element variables used in texts, overrides `<EngageContext />`'s ones (see the [variables](https://poool.dev/docs/engage/javascript/variables) documentation)
 - `texts` {`Object`} (optional) Element custom texts, overrides `<EngageContext />`'s ones (see the [texts](https://poool.dev/docs/engage/javascript/texts) documentation)
 - `events` {`Object`} (optional) Element events listeners, overrides `<EngageContext />`'s ones (see the [events](https://poool.dev/docs/engage/javascript/events) documentation)
@@ -91,14 +91,16 @@ Can be used to retrieve some properties from the current Engage context, as well
 
 #### Returns
 
-- `lib` {`Function`} The entire Engage sdk
 - `appId` {`String`} Current app ID
 - `config` {`Object`} Current Engage context config
 - `variables` {`Object`} Current Engage context variables
 - `texts` {`Object`} Current Engage context texts
 - `events` {`Object`} Current Engage context events listeners
-- `scriptURL` {`Object`} Engage SDK url
-- `commitPageView` {`Function`} Commit a page view (see the [commitPageView](https://poool.dev/docs/engage/javascript/methods#commitpageview) documentation)
+- `scriptUrl` {`Object`} Engage SDK url
+- `lib` {`Function`} The entire Engage SDK
+- `factory` {`Function`} Current Engage factory
+- `createFactory` {`Function`} Creates a new factory
+- `commitPageView` {`Function`} Commits a page view (see the [commitPageView](https://poool.dev/docs/engage/javascript/methods#commitpageview) documentation)
 
 #### Example
 
