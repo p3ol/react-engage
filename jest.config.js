@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   clearMocks: true,
   collectCoverage: true,
@@ -8,9 +10,12 @@ module.exports = {
   coverageDirectory: 'coverage',
   coveragePathIgnorePatterns: [
     '/node_modules/',
-    'index.js',
+    '/tests/',
   ],
   transform: {
     '^.+\\.js$': 'babel-jest',
+  },
+  moduleNameMapper: {
+    '^~tests-utils$': path.resolve(__dirname, 'tests/utils.js'),
   },
 };
