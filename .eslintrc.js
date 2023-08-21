@@ -18,6 +18,10 @@ module.exports = {
     },
     rules: {
       '@typescript-eslint/no-explicit-any': 0,
+      'max-len': [1, {
+        ignoreComments: true,
+      }],
+      'no-use-before-define': 0,
     },
   }],
 };

@@ -130,7 +130,8 @@ export interface EngageTexts {
    *
    * More infos: https://poool.dev/docs/engage/javascript/texts
    */
-  (texts: { [key: string]: string }, readonly?: boolean, locale?: string): Engage;
+  (texts: { [key: string]: string }, readonly?:
+    boolean, locale?: string): Engage;
 }
 
 export declare interface EngageEvents {
