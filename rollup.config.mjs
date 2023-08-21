@@ -11,10 +11,9 @@ const output = './dist';
 const name = 'poool-react-engage';
 const formats = ['umd', 'cjs', 'esm'];
 
-const defaultExternals = ['react', 'prop-types'];
+const defaultExternals = ['react'];
 const defaultGlobals = {
   react: 'React',
-  'prop-types': 'PropTypes',
 };
 
 const defaultPlugins = [
