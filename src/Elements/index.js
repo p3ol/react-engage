@@ -46,7 +46,7 @@ const Elements = forwardRef(({
     elementsRef.current = await factory.autoCreate(filters);
   };
 
-  const destroy = () =>
+  const destroy = () => elementsRef.current && 
     Promise.all(elementsRef.current.map(element => element.destroy()));
 
   return null;
