@@ -3,7 +3,7 @@
     "config:base"
   ],
   "baseBranches": [
-    "master",
+    "main",
     "develop"
   ],
   "packageRules": [{
@@ -13,7 +13,7 @@
   }, {
     "matchPackagePatterns": ["*"],
     "matchUpdateTypes": ["major","minor"],
-    "matchBaseBranches": ["master"],
+    "matchBaseBranches": ["main"],
     "enabled": false
   }, {
     "matchPackagePatterns": ["*"],
