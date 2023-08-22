@@ -11,7 +11,7 @@ const EngageContext = ({
   variables,
   texts,
   events,
-  scriptUrl = 'https://assets.poool.fr/engage.min.js',
+  scriptUrl = 'https://assets.poool.fr/engage.js',
   ...rest
 }) => {
   const [state, dispatch] = useReducer(mockState, {
