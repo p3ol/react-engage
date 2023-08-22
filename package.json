@@ -16,6 +16,12 @@
     "node": "16 || 18 || 20",
     "npm": ">=8"
   },
+  "dependencies": {
+    "@babel/runtime-corejs3": "7.22.10",
+    "@junipero/core": "3.2.2",
+    "core-js": "3.32.1",
+    "prop-types": "15.8.1"
+  },
   "devDependencies": {
     "@babel/core": "7.22.10",
     "@babel/eslint-parser": "7.22.10",
@@ -71,11 +77,5 @@
     "lint": "./node_modules/.bin/eslint --max-warnings=0 .",
     "changelog": "./node_modules/.bin/standard-changelog",
     "release": "./node_modules/.bin/standard-version && git push --follow-tags"
-  },
-  "dependencies": {
-    "@babel/runtime-corejs3": "7.22.10",
-    "@junipero/core": "3.2.2",
-    "core-js": "3.32.1",
-    "prop-types": "15.8.1"
   }
 }
