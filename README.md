@@ -58,7 +58,7 @@ export default = () => {
 - `variables` {`Object`} (optional) Elements variables used in texts (see the [variables](https://poool.dev/docs/engage/javascript/variables) documentation)
 - `texts` {`Object`} (optional) Elements custom texts (see the [texts](https://poool.dev/docs/engage/javascript/texts) documentation)
 - `events` {`Object`} (optional) Elements events listeners (see the [events](https://poool.dev/docs/engage/javascript/events) documentation)
-- `scriptUrl` {`String`} (optional, default: `'https://assets.poool.fr/engage.min.js'`) Default Poool Engage SDK url
+- `scriptUrl` {`String`} (optional, default: `'https://assets.poool.fr/engage.js'`) Default Poool Engage SDK url
 
 ### `<Element />`
 
