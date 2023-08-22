@@ -2,10 +2,24 @@
   "extends": [
     "config:base"
   ],
+  "baseBranches": [
+    "master",
+    "develop"
+  ],
   "packageRules": [{
     "matchUpdateTypes": ["patch", "pin"],
     "matchDepTypes": ["devDependencies", "dependencies"],
     "automerge": true
+  }, {
+    "matchPackagePatterns": ["*"],
+    "matchUpdateTypes": ["major","minor"],
+    "matchBaseBranches": ["master"],
+    "enabled": false
+  }, {
+    "matchPackagePatterns": ["*"],
+    "matchUpdateTypes": ["patch"],
+    "matchBaseBranches": ["develop"],
+    "enabled": false
   }, {
     "matchUpdateTypes": ["minor","major"],
     "matchDepTypes": ["dependencies"],
