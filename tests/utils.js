@@ -12,4 +12,13 @@ export const createBrowser = () =>
   puppeteer.launch({
     headless: process.env.HEADFULL ? false : 'new',
     pipe: true,
+    args: [
+      '--enable-logging',
+      '--lang=en',
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-web-security',
+      '--disable-features=IsolateOrigins,site-per-process',
+      '--single-process',
+    ],
   });
