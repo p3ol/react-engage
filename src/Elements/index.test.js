@@ -26,14 +26,14 @@ describe('<Elements />', () => {
   });
 
   it('should create elements with custom filters', () => {
-    const filters = ['test'];
+    const opts = { filters: ['test'] };
     const autoCreate = jest.fn();
 
     render(withEngage(
-      <Elements filters={filters} />,
+      <Elements filters={opts.filters} />,
       { factory: { autoCreate } }
     ));
-    expect(autoCreate).toHaveBeenCalledWith(filters);
+    expect(autoCreate).toHaveBeenCalledWith(opts);
   });
 
   it('should override configuration', () => {
