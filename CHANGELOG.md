@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/p3ol/react-engage/compare/v1.0.0...v1.0.1) (2024-01-24)
+
+
+### Bug Fixes
+
+* correctly hand over custom filters ([7a9e4d0](https://github.com/p3ol/react-engage/commit/7a9e4d030068073dc8f245a8a4fc81cc43106cfd))
+
 ## 1.0.0 (2023-08-24)
 
 
