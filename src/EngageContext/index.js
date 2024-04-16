@@ -12,6 +12,7 @@ const EngageContext = ({
   texts,
   events,
   scriptUrl = 'https://assets.poool.fr/engage.js',
+  scriptLoadTimeout = 2000,
   ...rest
 }) => {
   const [state, dispatch] = useReducer(mockState, {
@@ -30,7 +31,9 @@ const EngageContext = ({
       !globalThis.PooolEngage ||
       !globalThis.PooolEngage.isPoool
     ) {
-      await loadScript(scriptUrl, 'poool-react-engage-lib');
+      await loadScript(scriptUrl, 'poool-react-engage-lib', {
+        timeout: scriptLoadTimeout,
+      });
     }
 
     const engageRef = globalThis.PooolEngage || globalThis.Engage;
@@ -107,6 +110,7 @@ EngageContext.propTypes = {
   texts: PropTypes.object,
   events: PropTypes.object,
   scriptUrl: PropTypes.string,
+  scriptLoadTimeout: PropTypes.number,
 };
 
 export default EngageContext;
