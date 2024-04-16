@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/p3ol/react-engage/compare/v1.0.1...v1.1.0) (2024-04-16)
+
+
+### Features
+
+* add scriptLoadTimeout option & wait for script to load ([792c720](https://github.com/p3ol/react-engage/commit/792c7208f9f0ade225d7a322f511f97d292ef90f))
+
+
+### Bug Fixes
+
+* use correct selector ([f68c1de](https://github.com/p3ol/react-engage/commit/f68c1deb21878779ad91636c81254672ac1f0aa8))
+
 ### [1.0.1](https://github.com/p3ol/react-engage/compare/v1.0.0...v1.0.1) (2024-01-24)
 
 
