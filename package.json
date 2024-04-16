@@ -13,8 +13,7 @@
   "esnext": "src",
   "sideEffects": false,
   "engines": {
-    "node": "16 || 18 || 20",
-    "npm": ">=8"
+    "node": "16 || 18 || 20"
   },
   "dependencies": {
     "@babel/runtime-corejs3": "7.22.10",
@@ -69,12 +68,12 @@
   },
   "scripts": {
     "clean": "rm -rf ./dist || true",
-    "build": "./node_modules/.bin/rollup -c",
-    "serve": "./node_modules/.bin/webpack serve --config ./webpack.config.js",
+    "build": "yarn clean && rollup -c",
+    "serve": "webpack serve --config ./webpack.config.js",
     "prepack": "npm run build && npm run lint && npm run test",
-    "test": "NODE_ENV='test' ./node_modules/.bin/jest",
-    "lint": "./node_modules/.bin/eslint --max-warnings=0 .",
-    "changelog": "./node_modules/.bin/standard-changelog",
-    "release": "./node_modules/.bin/standard-version && git push --follow-tags"
-  }
+    "test": "NODE_ENV='test' jest",
+    "lint": "eslint --max-warnings=0 .",
+    "release": "standard-version && git push --follow-tags"
+  },
+  "packageManager": "yarn@4.1.1"
 }
