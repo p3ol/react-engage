@@ -1,3 +1,6 @@
 coverage
-.github
+examples
 tests
+scripts
+.github
+.yarn
