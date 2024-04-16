@@ -15,6 +15,9 @@
   "engines": {
     "node": "16 || 18 || 20"
   },
+  "workspaces": [
+    "examples/*"
+  ],
   "dependencies": {
     "@babel/runtime-corejs3": "7.22.10",
     "@junipero/core": "3.2.2",
@@ -69,11 +72,11 @@
   "scripts": {
     "clean": "rm -rf ./dist || true",
     "build": "yarn clean && rollup -c",
-    "serve": "webpack serve --config ./webpack.config.js",
     "prepack": "npm run build && npm run lint && npm run test",
     "test": "NODE_ENV='test' jest",
     "lint": "eslint --max-warnings=0 .",
-    "release": "standard-version && git push --follow-tags"
+    "release": "standard-version && git push --follow-tags",
+    "example:basic": "webpack serve --config ./examples/basic/webpack.config.js"
   },
   "packageManager": "yarn@4.1.1"
 }

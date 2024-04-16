@@ -9,7 +9,7 @@ describe('E2E > Engage', () => {
   beforeAll(async () => {
     process.env.TEST_PORT = 63003;
     server = await devServer.setup({
-      command: 'npm run serve',
+      command: 'yarn example:basic',
       host: 'localhost',
       port: 63003,
       launchTimeout: 10000,
