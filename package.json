@@ -76,7 +76,8 @@
     "test": "NODE_ENV='test' jest",
     "lint": "eslint --max-warnings=0 .",
     "release": "standard-version && git push --follow-tags",
-    "example:basic": "webpack serve --config ./examples/basic/webpack.config.js"
+    "example:basic": "webpack serve --config ./examples/basic/webpack.config.js",
+    "example:next": "cd examples/next && yarn dev"
   },
   "packageManager": "yarn@4.1.1"
 }

@@ -1,0 +1,10 @@
+{
+  "name": "poool-react-engage-next-example",
+  "dependencies": {
+    "@poool/react-engage": "portal:../../",
+    "next": "14.2.1"
+  },
+  "scripts": {
+    "dev": "next"
+  }
+}
