@@ -1,37 +1,10 @@
 {
   "extends": [
-    "config:base"
-  ],
-  "baseBranches": [
-    "main",
-    "develop"
+    "p3ol/renovate-presets//presets/base#v1.1.0"
   ],
   "packageRules": [{
     "matchUpdateTypes": ["patch", "pin"],
-    "matchDepTypes": ["devDependencies", "dependencies"],
-    "automerge": true
-  }, {
-    "matchPackagePatterns": ["*"],
-    "matchUpdateTypes": ["major","minor"],
-    "matchBaseBranches": ["main"],
-    "enabled": false
-  }, {
-    "matchPackagePatterns": ["*"],
-    "matchUpdateTypes": ["patch"],
-    "matchBaseBranches": ["develop"],
-    "enabled": false
-  }, {
-    "matchUpdateTypes": ["minor","major"],
-    "matchDepTypes": ["dependencies"],
-    "semanticCommitType": "feat"
-  }, {
     "matchDepTypes": ["devDependencies"],
-    "prPriority": -1
-  }, {
-    "matchPackagePatterns": ["^@poool/eslint"],
-    "groupName": "poool eslint monorepo"
-  }, {
-    "matchPackagePatterns": ["^@junipero"],
-    "groupName": "poool junipero monorepo"
+    "automerge": true
   }]
 }
