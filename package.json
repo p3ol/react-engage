@@ -59,7 +59,7 @@
     "react-dom": "18.2.0",
     "react-router-dom": "6.15.0",
     "rollup": "3.28.1",
-    "rollup-plugin-dts": "6.0.0",
+    "rollup-plugin-dts": "6.1.1",
     "standard-version": "9.5.0",
     "typescript": "5.1.6",
     "webpack": "5.88.2",
