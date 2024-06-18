@@ -2183,7 +2183,7 @@ __metadata:
     react-dom: "npm:18.2.0"
     react-router-dom: "npm:6.15.0"
     rollup: "npm:3.28.1"
-    rollup-plugin-dts: "npm:6.0.0"
+    rollup-plugin-dts: "npm:6.1.1"
     standard-version: "npm:9.5.0"
     typescript: "npm:5.1.6"
     webpack: "npm:5.88.2"
@@ -8469,7 +8469,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"magic-string@npm:^0.30.2, magic-string@npm:^0.30.3":
+"magic-string@npm:^0.30.10":
+  version: 0.30.10
+  resolution: "magic-string@npm:0.30.10"
+  dependencies:
+    "@jridgewell/sourcemap-codec": "npm:^1.4.15"
+  checksum: 10c0/aa9ca17eae571a19bce92c8221193b6f93ee8511abb10f085e55ffd398db8e4c089a208d9eac559deee96a08b7b24d636ea4ab92f09c6cf42a7d1af51f7fd62b
+  languageName: node
+  linkType: hard
+
+"magic-string@npm:^0.30.3":
   version: 0.30.9
   resolution: "magic-string@npm:0.30.9"
   dependencies:
@@ -10293,19 +10302,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"rollup-plugin-dts@npm:6.0.0":
-  version: 6.0.0
-  resolution: "rollup-plugin-dts@npm:6.0.0"
+"rollup-plugin-dts@npm:6.1.1":
+  version: 6.1.1
+  resolution: "rollup-plugin-dts@npm:6.1.1"
   dependencies:
-    "@babel/code-frame": "npm:^7.22.10"
-    magic-string: "npm:^0.30.2"
+    "@babel/code-frame": "npm:^7.24.2"
+    magic-string: "npm:^0.30.10"
   peerDependencies:
-    rollup: ^3.25.0
+    rollup: ^3.29.4 || ^4
     typescript: ^4.5 || ^5.0
   dependenciesMeta:
     "@babel/code-frame":
       optional: true
-  checksum: 10c0/d307b9cc0ffa47817e03ec28fc792e727189bb8e1a8f66de3f77887fe931224465cc8c8e84611808d70105d0cea1ba68d5fbf9699687ff7cb9e114452a73afa0
+  checksum: 10c0/2b042198ff00fb10c9c70087bbac9013f748dc34be0dbfcca82c6353884ead1467b4a8a37bafe9a8b9356479d43715c7cbc591eeb8e4112c583452431c1cb0a0
   languageName: node
   linkType: hard
 
