@@ -79,5 +79,5 @@
     "example:basic": "webpack serve --config ./examples/basic/webpack.config.js",
     "example:next": "cd examples/next && yarn dev"
   },
-  "packageManager": "yarn@4.1.1"
+  "packageManager": "yarn@4.3.1"
 }
