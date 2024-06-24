@@ -2181,7 +2181,7 @@ __metadata:
     puppeteer: "npm:21.1.0"
     react: "npm:18.2.0"
     react-dom: "npm:18.2.0"
-    react-router-dom: "npm:6.15.0"
+    react-router-dom: "npm:6.24.0"
     rollup: "npm:3.28.1"
     rollup-plugin-dts: "npm:6.0.0"
     standard-version: "npm:9.5.0"
@@ -2211,10 +2211,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@remix-run/router@npm:1.8.0":
-  version: 1.8.0
-  resolution: "@remix-run/router@npm:1.8.0"
-  checksum: 10c0/19412054e6d5e2e77e57735b2d937372f9ac164187180fe211c79bee04f1f5db91b859ef72f92055bffee3eb3eaa1aebe5033e366415cc386b4f345b08607eee
+"@remix-run/router@npm:1.17.0":
+  version: 1.17.0
+  resolution: "@remix-run/router@npm:1.17.0"
+  checksum: 10c0/6f39cb81c5dec3d3cb901cfc05ef1c745d23192def7d83e6d1a53c43cbb5d7ff488055fd1418ac72f904ff41b3d3ca339d223677994150f276c648123ce166f7
   languageName: node
   linkType: hard
 
@@ -9913,27 +9913,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router-dom@npm:6.15.0":
-  version: 6.15.0
-  resolution: "react-router-dom@npm:6.15.0"
+"react-router-dom@npm:6.24.0":
+  version: 6.24.0
+  resolution: "react-router-dom@npm:6.24.0"
   dependencies:
-    "@remix-run/router": "npm:1.8.0"
-    react-router: "npm:6.15.0"
+    "@remix-run/router": "npm:1.17.0"
+    react-router: "npm:6.24.0"
   peerDependencies:
     react: ">=16.8"
     react-dom: ">=16.8"
-  checksum: 10c0/2555468ab38468c7449d617ed2f60f07a310078b71a1a8db907bc354064f6d34e03f5d9d273d3d8528c04dbb51c27bfa40eb2167cff9df4a19438003c4b04280
+  checksum: 10c0/2cb41120c1ff58fd1e187807214cf581e78e2845e5f411aa6a04f4748bd100431fd1ac5f8a45db281ea03d0d2354b66896b938c0b77adf7b343a6c1be52411de
   languageName: node
   linkType: hard
 
-"react-router@npm:6.15.0":
-  version: 6.15.0
-  resolution: "react-router@npm:6.15.0"
+"react-router@npm:6.24.0":
+  version: 6.24.0
+  resolution: "react-router@npm:6.24.0"
   dependencies:
-    "@remix-run/router": "npm:1.8.0"
+    "@remix-run/router": "npm:1.17.0"
   peerDependencies:
     react: ">=16.8"
-  checksum: 10c0/19be638294926e2d6b1ca6de753d3b69ac9cd3e295158f933a2c5d9befe2d6dd84f2b15d45d904ac5009f813901183b0a92d50f9d4c2f496c974192b0b8fb2ec
+  checksum: 10c0/ad9c924d16dc4f5c90dff588e9a69d37488d2ad537de1ddbdf3b68561658c6e3fd1b8b12d16d50f19177f6547748c54e948d477e921f9230799ac71acfec24cf
   languageName: node
   linkType: hard
 
