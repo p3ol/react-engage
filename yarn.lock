@@ -1937,13 +1937,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@junipero/core@npm:3.2.2":
-  version: 3.2.2
-  resolution: "@junipero/core@npm:3.2.2"
-  dependencies:
-    "@babel/runtime-corejs3": "npm:7.22.10"
-    core-js: "npm:3.32.0"
-  checksum: 10c0/cc3232e3616945c5dfad62b92596f9d6979bf0d75f05c9726f4f74d897d49756e8b54328d5e7e5e224511ace4cd399dd8a823fa5b7d090a7b0df4353b5c94b1f
+"@junipero/core@npm:3.7.0":
+  version: 3.7.0
+  resolution: "@junipero/core@npm:3.7.0"
+  checksum: 10c0/a57c26bdc104da729eb2935676c249a15e4065773e76eb94cd42c6570e15f2ed3175d4f4ae5d3c01c2ffdb644bb085a08dd0db0de8ff531a7bd807046c71d572
   languageName: node
   linkType: hard
 
@@ -2133,7 +2130,7 @@ __metadata:
   resolution: "@poool/react-engage@portal:../../::locator=poool-react-engage-next-example%40workspace%3Aexamples%2Fnext"
   dependencies:
     "@babel/runtime-corejs3": "npm:7.22.10"
-    "@junipero/core": "npm:3.2.2"
+    "@junipero/core": "npm:3.7.0"
     core-js: "npm:3.32.1"
     prop-types: "npm:15.8.1"
   peerDependencies:
@@ -2152,7 +2149,7 @@ __metadata:
     "@babel/preset-env": "npm:7.22.10"
     "@babel/preset-react": "npm:7.22.5"
     "@babel/runtime-corejs3": "npm:7.22.10"
-    "@junipero/core": "npm:3.2.2"
+    "@junipero/core": "npm:3.7.0"
     "@poool/eslint-config": "npm:3.0.1"
     "@poool/eslint-config-react": "npm:3.0.1"
     "@poool/eslint-plugin": "npm:3.0.0"
@@ -4571,13 +4568,6 @@ __metadata:
   version: 3.36.1
   resolution: "core-js-pure@npm:3.36.1"
   checksum: 10c0/b964c7aa35665a4ecd513f62d695d99e96bb9e42621f7fcc823a613fab4155525d5c2875e46fcc4e6a3396c1fb7d543aee8f7afd83aa34531261b30af759c3d6
-  languageName: node
-  linkType: hard
-
-"core-js@npm:3.32.0":
-  version: 3.32.0
-  resolution: "core-js@npm:3.32.0"
-  checksum: 10c0/8839b9a5cfff4999cf5e3277072c7c581b29618c6dbc2f9d0170c529a701310ec78843bd97bede0742cf6899b526bdb062bb1d148c6e9a40f3d19173b7ee8e88
   languageName: node
   linkType: hard
 
