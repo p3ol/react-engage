@@ -20,7 +20,7 @@
   ],
   "dependencies": {
     "@babel/runtime-corejs3": "7.22.10",
-    "@junipero/core": "3.2.2",
+    "@junipero/core": "3.7.1",
     "core-js": "3.32.1",
     "prop-types": "15.8.1"
   },
