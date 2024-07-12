@@ -30,7 +30,14 @@
     "@rollup/plugin-terser": "0.4.4",
     "@swc/core": "1.6.13",
     "@swc/jest": "0.2.36",
+    "@testing-library/dom": "10.3.1",
     "@testing-library/react": "16.0.0",
+    "@types/jest": "29.5.12",
+    "@types/node": "20.14.10",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "@types/webpack": "5.28.5",
+    "@types/webpack-dev-server": "4.7.2",
     "@typescript-eslint/eslint-plugin": "7.16.0",
     "@typescript-eslint/parser": "7.16.0",
     "eslint": "8.57.0",
@@ -49,6 +56,7 @@
     "react-router-dom": "6.24.1",
     "rollup": "4.18.1",
     "swc-loader": "0.2.6",
+    "ts-node": "10.9.2",
     "typescript": "5.5.3",
     "webpack": "5.93.0",
     "webpack-cli": "5.1.4",
@@ -59,13 +67,15 @@
   },
   "scripts": {
     "clean": "rm -rf ./dist || true",
-    "build": "yarn clean && rollup -c",
-    "prepack": "npm run build && npm run lint && npm run test",
+    "build": "yarn clean && yarn build:code && yarn build:types",
+    "build:code": "rollup --configPlugin @rollup/plugin-swc -c",
+    "build:types": "tsc --project ./tsconfig.build.json",
+    "prepack": "yarn build && yarn lint && yarn tsc && yarn test",
     "test": "NODE_ENV='test' jest",
     "lint": "eslint --max-warnings=0 .",
-    "release": "standard-version && git push --follow-tags",
-    "example:basic": "webpack serve --config ./examples/basic/webpack.config.js",
-    "example:next": "cd examples/next && yarn dev"
+    "release": "commit-and-tag-version && git push --follow-tags",
+    "example:basic": "yarn workspace poool-react-engage-basic-example serve",
+    "example:next": "yarn workspace poool-react-engage-next-example dev"
   },
   "packageManager": "yarn@4.3.1"
 }

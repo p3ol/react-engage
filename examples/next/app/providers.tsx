@@ -1,9 +1,9 @@
 'use client';
 
+import type { ComponentPropsWithoutRef } from 'react';
 import { EngageContext } from '@poool/react-engage';
-import PropTypes from 'prop-types';
 
-const Providers = ({ children }) => {
+const Providers = ({ children }: ComponentPropsWithoutRef<any>) => {
   return (
     <EngageContext
       appId="155PF-L7Q6Q-EB2GG-04TF8"
@@ -14,8 +14,6 @@ const Providers = ({ children }) => {
   );
 };
 
-Providers.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+Providers.displayName = 'Providers';
 
 export default Providers;

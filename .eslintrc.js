@@ -1,27 +1,17 @@
 module.exports = {
-  extends: '@poool/eslint-config-react',
+  extends: [
+    '@poool/eslint-config-react',
+    'plugin:@typescript-eslint/recommended',
+  ],
+  parser: '@typescript-eslint/parser',
   rules: {
     'react/react-in-jsx-scope': 0,
+    '@typescript-eslint/no-explicit-any': 0,
   },
   overrides: [{
-    files: ['src/**/*.test.js'],
+    files: ['src/**/*.test.{ts,tsx}'],
     env: {
       jest: true,
-    },
-  }, {
-    files: ['src/**/*.{ts,tsx}'],
-    extends: ['plugin:@typescript-eslint/recommended'],
-    parser: '@typescript-eslint/parser',
-    globals: {
-      JSX: 'readonly',
-      React: 'readonly',
-    },
-    rules: {
-      '@typescript-eslint/no-explicit-any': 0,
-      'max-len': [1, {
-        ignoreComments: true,
-      }],
-      'no-use-before-define': 0,
     },
   }],
 };
