@@ -6,14 +6,11 @@
   "repository": "https://github.com/p3ol/react-engage.git",
   "author": "Ugo Stephant <ugo@poool.fr>",
   "license": "MIT",
-  "unpkg": "dist/poool-react-engage.umd.js",
-  "cdn": "dist/poool-react-engage.umd.js",
-  "jsnext:main": "dist/esm/index.js",
   "module": "dist/esm/index.js",
-  "esnext": "src",
+  "types": "dist/types/index.d.ts",
   "sideEffects": false,
   "engines": {
-    "node": "16 || 18 || 20"
+    "node": "16 || 18 || 20 || 22"
   },
   "workspaces": [
     "examples/*"
