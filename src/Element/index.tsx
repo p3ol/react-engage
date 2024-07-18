@@ -9,9 +9,9 @@ import {
   ElementType,
 } from 'react';
 
+import type { EngageConfigCommons } from '../types';
 import { useEngage } from '../hooks';
 import { generateId } from '../utils';
-import { EngageConfigCommons } from '../types';
 
 export interface ElementProps
   extends EngageConfigCommons, ComponentPropsWithoutRef<any> {

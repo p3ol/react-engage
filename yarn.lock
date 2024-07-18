@@ -1123,7 +1123,7 @@ __metadata:
   resolution: "@poool/react-engage@portal:../../::locator=poool-react-engage-basic-example%40workspace%3Aexamples%2Fbasic"
   dependencies:
     "@junipero/core": "npm:3.7.1"
-    "@types/poool-engage": "npm:2.1.1"
+    "@types/poool-engage": "npm:2.1.2"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
   languageName: node
@@ -1134,7 +1134,7 @@ __metadata:
   resolution: "@poool/react-engage@portal:../../::locator=poool-react-engage-next-example%40workspace%3Aexamples%2Fnext"
   dependencies:
     "@junipero/core": "npm:3.7.1"
-    "@types/poool-engage": "npm:2.1.1"
+    "@types/poool-engage": "npm:2.1.2"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
   languageName: node
@@ -1159,7 +1159,7 @@ __metadata:
     "@testing-library/react": "npm:16.0.0"
     "@types/jest": "npm:29.5.12"
     "@types/node": "npm:20.14.10"
-    "@types/poool-engage": "npm:2.1.1"
+    "@types/poool-engage": "npm:2.1.2"
     "@types/react": "npm:18.3.3"
     "@types/react-dom": "npm:18.3.0"
     "@types/webpack": "npm:5.28.5"
@@ -1959,10 +1959,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/poool-engage@npm:2.1.1":
-  version: 2.1.1
-  resolution: "@types/poool-engage@npm:2.1.1"
-  checksum: 10c0/77361dbd20ceed833677ba07f01772c7907a76a3a1185597eac207e2f19081cddb54c7e48667f29db9192a0e2a07f3ccf7ea78aa406ab4305faac59813a8d92f
+"@types/poool-engage@npm:2.1.2":
+  version: 2.1.2
+  resolution: "@types/poool-engage@npm:2.1.2"
+  checksum: 10c0/6ee719922224775c4773d1244fbe174753d5a7daaaa88adce463afa2f690f853ff6658f162c467bb19871452a89c91a1f6109fe447961ff0bfc57caefce87cc5
   languageName: node
   linkType: hard
 

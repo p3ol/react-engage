@@ -10,6 +10,7 @@ import { type StateReducer, mockState, mergeDeep } from '@junipero/core';
 import type {
   EngageConfigCommons,
   EventCallback,
+  EventCallbackFunction,
   EventCallbackObject,
 } from '../types';
 import { EngageContext as Ctx } from '../contexts';
@@ -57,10 +58,8 @@ const EngageContext = ({
   const init = async () => {
     if (
       !globalThis.Engage ||
-      // @ts-expect-error - TODO: remove when @types/poool-engage is updated
       !globalThis.Engage.isPoool ||
       !globalThis.PooolEngage ||
-      // @ts-expect-error - TODO: remove when @types/poool-engage is updated
       !globalThis.PooolEngage.isPoool
     ) {
       await loadScript(scriptUrl, 'poool-react-engage-lib', {
@@ -106,8 +105,7 @@ const EngageContext = ({
         factory.on(
           event,
           (callback as EventCallbackObject<typeof event>)?.callback ||
-            (callback as EventCallbackObject<typeof event>),
-          // @ts-expect-error TODO: remove when @types/poool-engage is updated
+            (callback as EventCallbackFunction<typeof event>),
           { once: !!(callback as EventCallbackObject<typeof event>)?.once }
         );
       });

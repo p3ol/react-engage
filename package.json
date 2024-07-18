@@ -17,7 +17,7 @@
   ],
   "dependencies": {
     "@junipero/core": "3.7.1",
-    "@types/poool-engage": "2.1.1"
+    "@types/poool-engage": "2.1.2"
   },
   "devDependencies": {
     "@babel/eslint-plugin": "7.24.7",
