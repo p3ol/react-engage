@@ -1,14 +1,18 @@
 import { useReducer } from 'react';
 import { createRoot } from 'react-dom/client';
-import { mockState } from '@junipero/core';
+import { mockState, StateReducer } from '@junipero/core';
 import { EngageContext, Element, Elements } from '@poool/react-engage';
+
+export interface AppState {
+  mode: 'auto' | 'slug';
+}
 
 const App = () => {
   if (!document.referrer) {
     location.reload();
   }
 
-  const [state, dispatch] = useReducer(mockState, {
+  const [state, dispatch] = useReducer<StateReducer<AppState>>(mockState, {
     mode: 'auto',
   });
 

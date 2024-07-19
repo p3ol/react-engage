@@ -1,9 +1,38 @@
-import { useCallback, useEffect, useReducer } from 'react';
-import PropTypes from 'prop-types';
-import { mockState, mergeDeep } from '@junipero/core';
+import type { Poool } from 'poool-engage';
+import {
+  type ComponentPropsWithoutRef,
+  useCallback,
+  useEffect,
+  useReducer,
+} from 'react';
+import { type StateReducer, mockState, mergeDeep } from '@junipero/core';
 
+import type {
+  EngageConfigCommons,
+  EventCallback,
+  EventCallbackFunction,
+  EventCallbackObject,
+} from '../types';
 import { EngageContext as Ctx } from '../contexts';
 import { loadScript } from '../utils';
+
+export interface EngageContextProps
+  extends EngageConfigCommons, ComponentPropsWithoutRef<any> {
+  /**
+   * Engage SDK url.
+   */
+  scriptUrl?: string;
+  /**
+   * Maximum time for the Engage script to load
+   * @default 2000
+   */
+  scriptLoadTimeout?: number;
+}
+
+export interface EngageContextState {
+  lib?: Poool.Engage;
+  factory?: Poool.Engage;
+}
 
 const EngageContext = ({
   appId,
@@ -14,8 +43,10 @@ const EngageContext = ({
   scriptUrl = 'https://assets.poool.fr/engage.js',
   scriptLoadTimeout = 2000,
   ...rest
-}) => {
-  const [state, dispatch] = useReducer(mockState, {
+}: EngageContextProps) => {
+  const [state, dispatch] = useReducer<
+    StateReducer<EngageContextState>
+  >(mockState, {
     lib: null,
     factory: null,
   });
@@ -48,7 +79,7 @@ const EngageContext = ({
     dispatch({ lib, factory });
   };
 
-  const createFactory = (opts = {}, lib = null) => {
+  const createFactory = (opts?: EngageConfigCommons, lib?: Poool.Engage) => {
     const library = lib || state.lib;
 
     if (!library) {
@@ -64,11 +95,18 @@ const EngageContext = ({
     Object
       .entries(events || {})
       .concat(Object.entries(opts.events || {}))
-      .forEach(([event, callback]) => {
+      .forEach(([
+        event,
+        callback,
+      ]: [
+        Poool.EngageEventsList,
+        EventCallback<typeof events[keyof typeof events]>,
+      ]) => {
         factory.on(
           event,
-          callback?.callback || callback,
-          { once: !!callback?.once }
+          (callback as EventCallbackObject<typeof event>)?.callback ||
+            (callback as EventCallbackFunction<typeof event>),
+          { once: !!(callback as EventCallbackObject<typeof event>)?.once }
         );
       });
 
@@ -102,15 +140,5 @@ const EngageContext = ({
 };
 
 EngageContext.displayName = 'EngageContext';
-
-EngageContext.propTypes = {
-  appId: PropTypes.string.isRequired,
-  config: PropTypes.object,
-  variables: PropTypes.object,
-  texts: PropTypes.object,
-  events: PropTypes.object,
-  scriptUrl: PropTypes.string,
-  scriptLoadTimeout: PropTypes.number,
-};
 
 export default EngageContext;

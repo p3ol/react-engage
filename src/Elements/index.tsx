@@ -1,9 +1,34 @@
-import { useEffect, useImperativeHandle, useRef, forwardRef } from 'react';
-import PropTypes from 'prop-types';
+import type { Poool } from 'poool-engage';
+import {
+  type ComponentPropsWithoutRef,
+  type MutableRefObject,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  forwardRef,
+} from 'react';
 
 import { useEngage } from '../hooks';
+import { EngageConfigCommons } from '../types';
 
-const Elements = forwardRef(({
+export interface ElementsProps
+  extends Omit<EngageConfigCommons, 'appId'>, ComponentPropsWithoutRef<any> {
+  /**
+   * Whether to use the factory from `<EngageContext />` or not.
+   */
+  useGlobalFactory?: boolean;
+  /**
+   * List of filters to apply to the elements.
+   */
+  filters?: string[];
+}
+
+export interface ElementsRef {
+  elementsRef: MutableRefObject<Poool.EngageElement[]>;
+  destroy: () => Promise<void[]>;
+}
+
+const Elements = forwardRef<ElementsRef, ElementsProps>(({
   useGlobalFactory = true,
   filters,
   config,
@@ -11,7 +36,7 @@ const Elements = forwardRef(({
   texts,
   events,
 }, ref) => {
-  const elementsRef = useRef([]);
+  const elementsRef = useRef<Poool.EngageElement[]>([]);
   const {
     lib,
     factory: globalFactory,
@@ -52,21 +77,14 @@ const Elements = forwardRef(({
     };
   }, [lib, globalFactory, filters, config, variables, texts, events]);
 
-  const destroy = () => elementsRef.current &&
-    Promise.all(elementsRef.current.map(element => element.destroy()));
+  const destroy = async () => {
+    return await Promise.all((elementsRef.current || [])
+      .map(element => element.destroy()));
+  };
 
   return null;
 });
 
 Elements.displayName = 'Elements';
-
-Elements.propTypes = {
-  useGlobalFactory: PropTypes.bool,
-  filters: PropTypes.arrayOf(PropTypes.string),
-  config: PropTypes.object,
-  variables: PropTypes.object,
-  texts: PropTypes.object,
-  events: PropTypes.object,
-};
 
 export default Elements;
