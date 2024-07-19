@@ -1,6 +1,25 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [2.0.0](https://github.com/p3ol/react-engage/compare/v1.1.0...v2.0.0) (2024-07-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* remove node 16 compat
+
+### Features
+
+* remove node 16 compat ([14c7565](https://github.com/p3ol/react-engage/commit/14c75655d8762caaf6dbb6234a74cbe8dc7cd963))
+
+
+### Bug Fixes
+
+* remove unused deps ([fdf32ee](https://github.com/p3ol/react-engage/commit/fdf32ee0fdce404dc193c5b571481764e29a60e0))
+* update various deps ([3c64239](https://github.com/p3ol/react-engage/commit/3c64239638f7c756c1087a2a4be2a4dd96e6d983))
+* upgrade a lot of deps ([6c5ba6b](https://github.com/p3ol/react-engage/commit/6c5ba6bb050d5a53c469da5dea1ac169f51da518))
+* various type issues ([e5e8181](https://github.com/p3ol/react-engage/commit/e5e81815b5a0773cc0e70c4bf0df951f034b8eb9))
 
 ## [1.1.0](https://github.com/p3ol/react-engage/compare/v1.0.1...v1.1.0) (2024-04-16)
 
