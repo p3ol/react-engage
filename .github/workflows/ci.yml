@@ -15,14 +15,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
-          cache: npm
+          node-version: 20
+          check-latest: true
+          cache: yarn
       - name: Install deps
-        run: npm install
+        run: yarn install
       - name: ESlint check
-        run: npm run lint
+        run: yarn lint
+      - name: Type check
+        run: yarn tsc
 
   test:
     name: Unit tests
@@ -32,16 +35,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
-          cache: npm
+          node-version: 20
+          check-latest: true
+          cache: yarn
       - name: Install deps
-        run: npm install
+        run: yarn install
       - name: Test
-        run: npm run test
+        run: yarn test
       - name: Codecov upload
-        uses: codecov/codecov-action@v3.1.4
+        uses: codecov/codecov-action@v4.5.0
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
 
@@ -53,11 +57,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Setup node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
-          cache: npm
+          node-version: 20
+          check-latest: true
+          cache: yarn
       - name: Install deps
-        run: npm install
+        run: yarn install
       - name: Build
-        run: npm run build
+        run: yarn build

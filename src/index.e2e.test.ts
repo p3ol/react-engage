@@ -1,15 +1,18 @@
+import type { SpawndChildProcess } from 'spawnd';
 import devServer from 'jest-dev-server';
+import { Browser, Page } from 'puppeteer';
 
-import { createBrowser } from '~tests-utils';
+import { createBrowser } from '~/tests/utils';
 
 describe('E2E > Engage', () => {
   jest.setTimeout(30000);
-  let server, browser;
+  let server: SpawndChildProcess[];
+  let browser: Browser;
 
   beforeAll(async () => {
-    process.env.TEST_PORT = 63003;
+    process.env.TEST_PORT = '63003';
     server = await devServer.setup({
-      command: 'npm run serve',
+      command: 'yarn example:basic',
       host: 'localhost',
       port: 63003,
       launchTimeout: 10000,
@@ -19,7 +22,7 @@ describe('E2E > Engage', () => {
   });
 
   describe('Element', () => {
-    let page;
+    let page: Page;
 
     beforeAll(async () => {
       page = await browser.newPage();
@@ -31,7 +34,7 @@ describe('E2E > Engage', () => {
     it('should display an element', async () => {
       await page.waitForSelector('iframe.p3-outlet');
       const src = await page.evaluate(() =>
-        document.querySelector('iframe.p3-outlet').src);
+        document.querySelector<HTMLIFrameElement>('iframe.p3-outlet').src);
 
       expect(src).toMatch(/https:\/\/[^/]+\/engage\/[^/]+\/[^/]/g);
     });
@@ -42,7 +45,7 @@ describe('E2E > Engage', () => {
   });
 
   describe('Elements', () => {
-    let page;
+    let page: Page;
 
     beforeAll(async () => {
       page = await browser.newPage();
@@ -53,7 +56,7 @@ describe('E2E > Engage', () => {
 
     it('should display elements', async () => {
       const button = await page.waitForSelector('#SwitchMode');
-      await button.evaluate(btn => btn.click());
+      await button.evaluate((btn: HTMLButtonElement) => btn.click());
 
       await page.waitForSelector('iframe.p3-outlet');
       const handles = await page.$$('iframe.p3-outlet');

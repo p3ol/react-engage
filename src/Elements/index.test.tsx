@@ -1,8 +1,8 @@
 import { render, waitFor } from '@testing-library/react';
 import { useRef, useEffect } from 'react';
 
-import { withEngage } from '~tests-utils';
-import Elements from './index';
+import { withEngage } from '~/tests/utils';
+import Elements, { type ElementsRef } from './index';
 
 describe('<Elements />', () => {
   it('should create elements at start', () => {
@@ -26,14 +26,14 @@ describe('<Elements />', () => {
   });
 
   it('should create elements with custom filters', () => {
-    const filters = ['test'];
+    const opts = { filters: ['test'] };
     const autoCreate = jest.fn();
 
     render(withEngage(
-      <Elements filters={filters} />,
+      <Elements filters={opts.filters} />,
       { factory: { autoCreate } }
     ));
-    expect(autoCreate).toHaveBeenCalledWith(filters);
+    expect(autoCreate).toHaveBeenCalledWith(opts);
   });
 
   it('should override configuration', () => {
@@ -64,7 +64,7 @@ describe('<Elements />', () => {
       jest.fn().mockReturnValue(Promise.resolve([{ destroy }]));
 
     const Comp = () => {
-      const ref = useRef();
+      const ref = useRef<ElementsRef>();
 
       useEffect(() => {
         const timer = setTimeout(() => {
@@ -86,7 +86,7 @@ describe('<Elements />', () => {
   it('should destroy elements when component is unmounted', async () => {
     const destroy = jest.fn().mockReturnValue(Promise.resolve());
     const autoCreate = jest.fn().mockReturnValue(
-      new Promise(resolve => setTimeout(() => resolve([{ destroy }])), 100)
+      new Promise(resolve => setTimeout(() => resolve([{ destroy }]), 100))
     );
 
     const { unmount } = render(withEngage(

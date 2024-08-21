@@ -1,8 +1,8 @@
 import { render, waitFor } from '@testing-library/react';
 import { useRef, useEffect } from 'react';
 
-import { withEngage } from '~tests-utils';
-import Element from './index';
+import { withEngage } from '~/tests/utils';
+import Element, { type ElementRef } from './index';
 
 describe('<Element />', () => {
   it('should create element at start', () => {
@@ -57,7 +57,7 @@ describe('<Element />', () => {
       jest.fn().mockReturnValue(Promise.resolve({ destroy }));
 
     const Comp = () => {
-      const ref = useRef();
+      const ref = useRef<ElementRef>();
 
       useEffect(() => {
         const timer = setTimeout(() => {
@@ -82,7 +82,7 @@ describe('<Element />', () => {
   it('should destroy element when component is unmounted', async () => {
     const destroy = jest.fn().mockReturnValue(Promise.resolve());
     const createElement = jest.fn().mockReturnValue(
-      new Promise(resolve => setTimeout(() => resolve({ destroy })), 100)
+      new Promise(resolve => setTimeout(() => resolve({ destroy }), 100))
     );
 
     const { unmount } = render(withEngage(

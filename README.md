@@ -7,7 +7,7 @@
 ## Installation
 
 ```bash
-npm install @poool/react-engage
+yarn add @poool/react-engage
 ```
 
 ## Usage
@@ -59,6 +59,7 @@ export default = () => {
 - `texts` {`Object`} (optional) Elements custom texts (see the [texts](https://poool.dev/docs/engage/javascript/texts) documentation)
 - `events` {`Object`} (optional) Elements events listeners (see the [events](https://poool.dev/docs/engage/javascript/events) documentation)
 - `scriptUrl` {`String`} (optional, default: `'https://assets.poool.fr/engage.js'`) Default Poool Engage SDK url
+- `scriptLoadTimeout` {`Number`} (optional, default: `2000`) Timeout for the script to load
 
 ### `<Element />`
 
@@ -119,19 +120,19 @@ Please check the [CONTRIBUTING.md](https://github.com/p3ol/react-engage/blob/mai
 Install dependencies:
 
 ```bash
-npm install
+yarn install
 ```
 
 Run examples at http://localhost:63001/ with webpack dev server:
 
 ```bash
-npm run serve
+yarn serve
 ```
 
 And test your code:
 
 ```bash
-npm test
+yarn test
 ```
 
 ## License

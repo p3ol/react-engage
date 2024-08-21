@@ -1,5 +1,5 @@
 export const randomString = () =>
-  Math.random().toString(36).substring(2, 5);
+  Math.random().toString(36).slice(2, 7);
 
 export const generateId = () => {
   let id;
@@ -16,14 +16,23 @@ export const generateId = () => {
   return id;
 };
 
-export const loadScript = (url, id) => new Promise((resolve, reject) => {
+export const loadScript = (
+  url: string,
+  id: string,
+  { timeout }: { timeout?: number } = {}
+) => new Promise((resolve, reject) => {
   /* istanbul ignore else: tested inside puppeteer */
   if (process.env.NODE_ENV === 'test') {
-    return resolve();
+    return resolve(true);
   }
 
-  if (document.querySelector(`#${id}`)) {
-    return resolve();
+  const existing = globalThis.document.getElementById(id);
+
+  if (existing) {
+    return Promise.race([
+      new Promise(resolve => existing.addEventListener('load', resolve)),
+      new Promise(resolve => setTimeout(resolve, timeout ?? 2000)),
+    ]);
   }
 
   const script = globalThis.document.createElement('script');
