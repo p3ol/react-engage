@@ -1320,7 +1320,7 @@ __metadata:
     "@junipero/core": "npm:3.10.0"
     "@types/poool-engage": "npm:2.1.2"
   peerDependencies:
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
   languageName: node
   linkType: soft
 
@@ -1331,7 +1331,7 @@ __metadata:
     "@junipero/core": "npm:3.10.0"
     "@types/poool-engage": "npm:2.1.2"
   peerDependencies:
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
   languageName: node
   linkType: soft
 
@@ -1384,7 +1384,7 @@ __metadata:
     webpack-cli: "npm:5.1.4"
     webpack-dev-server: "npm:5.1.0"
   peerDependencies:
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
   languageName: unknown
   linkType: soft
 
