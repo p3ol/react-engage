@@ -5,7 +5,7 @@ import {
   useEffect,
   useReducer,
 } from 'react';
-import { type StateReducer, mockState, mergeDeep } from '@junipero/core';
+import { mockState, mergeDeep } from '@junipero/core';
 
 import type {
   EngageConfigCommons,
@@ -44,9 +44,7 @@ const EngageContext = ({
   scriptLoadTimeout = 2000,
   ...rest
 }: EngageContextProps) => {
-  const [state, dispatch] = useReducer<
-    StateReducer<EngageContextState>
-  >(mockState, {
+  const [state, dispatch] = useReducer(mockState<EngageContextState>, {
     lib: null,
     factory: null,
   });

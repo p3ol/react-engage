@@ -1,6 +1,6 @@
 import type { Poool } from 'poool-engage';
 import type { ReactNode } from 'react';
-import puppeteer, { type PuppeteerLaunchOptions } from 'puppeteer';
+import puppeteer, { type LaunchOptions } from 'puppeteer';
 
 import { type EngageContextValue, EngageContext } from '../src/contexts';
 
@@ -16,7 +16,7 @@ export const withEngage = (
   </EngageContext.Provider>
 );
 
-export const createBrowser = (opts?: PuppeteerLaunchOptions) =>
+export const createBrowser = (opts?: LaunchOptions) =>
   puppeteer.launch({
     headless: !process.env.HEADFULL,
     pipe: true,

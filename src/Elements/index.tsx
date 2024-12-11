@@ -1,18 +1,27 @@
 import type { Poool } from 'poool-engage';
 import {
   type ComponentPropsWithoutRef,
-  type MutableRefObject,
+  type ReactNode,
+  type RefObject,
   useEffect,
   useImperativeHandle,
   useRef,
-  forwardRef,
 } from 'react';
 
+import type { EngageConfigCommons } from '../types';
 import { useEngage } from '../hooks';
-import { EngageConfigCommons } from '../types';
+
+export interface ElementsRef {
+  elementsRef: RefObject<Poool.EngageElement[]>;
+  destroy: () => Promise<void[]>;
+}
 
 export interface ElementsProps
   extends Omit<EngageConfigCommons, 'appId'>, ComponentPropsWithoutRef<any> {
+  /**
+   * Ref to the elements component
+   */
+  ref?: RefObject<ElementsRef>;
   /**
    * Whether to use the factory from `<EngageContext />` or not.
    */
@@ -23,19 +32,15 @@ export interface ElementsProps
   filters?: string[];
 }
 
-export interface ElementsRef {
-  elementsRef: MutableRefObject<Poool.EngageElement[]>;
-  destroy: () => Promise<void[]>;
-}
-
-const Elements = forwardRef<ElementsRef, ElementsProps>(({
-  useGlobalFactory = true,
+const Elements = ({
+  ref,
   filters,
   config,
   variables,
   texts,
   events,
-}, ref) => {
+  useGlobalFactory = true,
+}: ElementsProps): ReactNode => {
   const elementsRef = useRef<Poool.EngageElement[]>([]);
   const {
     lib,
@@ -83,7 +88,7 @@ const Elements = forwardRef<ElementsRef, ElementsProps>(({
   };
 
   return null;
-});
+};
 
 Elements.displayName = 'Elements';
 

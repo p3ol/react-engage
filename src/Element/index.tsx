@@ -1,20 +1,30 @@
 import type { Poool } from 'poool-engage';
 import {
+  type ComponentPropsWithoutRef,
+  type ElementType,
+  type RefObject,
   useRef,
   useMemo,
   useEffect,
   useImperativeHandle,
-  forwardRef,
-  ComponentPropsWithoutRef,
-  ElementType,
 } from 'react';
 
 import type { EngageConfigCommons } from '../types';
 import { useEngage } from '../hooks';
 import { generateId } from '../utils';
 
+export interface ElementRef {
+  containerRef: RefObject<HTMLElement>;
+  elementRef: RefObject<Poool.EngageElement>;
+  destroy: () => void;
+}
+
 export interface ElementProps
   extends EngageConfigCommons, ComponentPropsWithoutRef<any> {
+  /**
+   * Ref to the element itself
+   */
+  ref?: RefObject<ElementRef>;
   /**
    * Custom wrapper component ID
    */
@@ -33,13 +43,8 @@ export interface ElementProps
   slug: string;
 }
 
-export interface ElementRef {
-  containerRef: React.MutableRefObject<HTMLElement>;
-  elementRef: React.MutableRefObject<Poool.EngageElement>;
-  destroy: () => void;
-}
-
-const Element = forwardRef<ElementRef, ElementProps>(({
+const Element = ({
+  ref,
   id,
   slug,
   config,
@@ -49,9 +54,9 @@ const Element = forwardRef<ElementRef, ElementProps>(({
   tag: Tag = 'div',
   useGlobalFactory = true,
   ...rest
-}, ref) => {
-  const elementRef = useRef<Poool.EngageElement>();
-  const containerRef = useRef<HTMLElement>();
+}: ElementProps) => {
+  const elementRef = useRef<Poool.EngageElement>(undefined);
+  const containerRef = useRef<HTMLElement>(undefined);
   const customId = useMemo(() => generateId(), []);
   const { lib, factory: globalFactory, createFactory } = useEngage();
 
@@ -96,7 +101,7 @@ const Element = forwardRef<ElementRef, ElementProps>(({
   return (
     <Tag ref={containerRef} id={id || customId} { ...rest } />
   );
-});
+};
 
 Element.displayName = 'Element';
 

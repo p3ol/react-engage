@@ -57,7 +57,7 @@ describe('<Element />', () => {
       jest.fn().mockReturnValue(Promise.resolve({ destroy }));
 
     const Comp = () => {
-      const ref = useRef<ElementRef>();
+      const ref = useRef<ElementRef>(undefined);
 
       useEffect(() => {
         const timer = setTimeout(() => {
