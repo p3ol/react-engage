@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.1](https://github.com/p3ol/react-engage/compare/v2.1.0...v2.1.1) (2024-12-11)
+
+
+### Bug Fixes
+
+* bad lockfile ([579e0f4](https://github.com/p3ol/react-engage/commit/579e0f4b15622cd621ec08c2954931ac8a873548))
+
 ## [2.1.0](https://github.com/p3ol/react-engage/compare/v2.0.0...v2.1.0) (2024-12-11)
 
 
