@@ -138,3 +138,12 @@ yarn test
 ## License
 
 This software is licensed under [MIT](https://github.com/p3ol/react-engage/blob/main/LICENSE).
+
+## v1 -> v2 Migration
+
+**There shouldn't be any migration needed for this version.**
+
+v4 only drops support for Node 16 & yarn < 3.
+
+The project was also migrated to TypeScript, but it shouldn't affect the way you use the library.
+
