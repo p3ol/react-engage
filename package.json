@@ -1,6 +1,6 @@
 {
   "name": "@poool/react-engage",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "The easiest way to add Poool Engage to your React app ✨",
   "main": "dist/poool-react-engage.cjs.js",
   "repository": {

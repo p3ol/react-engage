@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.0](https://github.com/p3ol/react-engage/compare/v2.0.0...v2.1.0) (2024-12-11)
+
+
+### Features
+
+* upgrade react to 19 ([c66fdf6](https://github.com/p3ol/react-engage/commit/c66fdf6406ebaf6e55b991c3413843022c08897d))
+
+
+### Bug Fixes
+
+* react 19 peer dep compat ([25a1f75](https://github.com/p3ol/react-engage/commit/25a1f751bc46592c8c732476fb644f7006fb8d9e))
+* various type issues ([28d9d04](https://github.com/p3ol/react-engage/commit/28d9d04759805e9b5866f57e66ebc85df7c6cf19))
+
 ## [2.0.0](https://github.com/p3ol/react-engage/compare/v1.1.0...v2.0.0) (2024-07-19)
 
 
