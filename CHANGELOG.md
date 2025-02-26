@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.2](https://github.com/p3ol/react-engage/compare/v2.1.1...v2.1.2) (2025-02-26)
+
+
+### Bug Fixes
+
+* bring back react < 19 compat ([8886a3f](https://github.com/p3ol/react-engage/commit/8886a3ff07afaaa8dfb1f9cd3d0ba4bd0362e8e9))
+
 ## [2.1.1](https://github.com/p3ol/react-engage/compare/v2.1.0...v2.1.1) (2024-12-11)
 
 
