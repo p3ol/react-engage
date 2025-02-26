@@ -6,6 +6,7 @@ import {
   useEffect,
   useImperativeHandle,
   useRef,
+  forwardRef,
 } from 'react';
 
 import type { EngageConfigCommons } from '../types';
@@ -32,15 +33,14 @@ export interface ElementsProps
   filters?: string[];
 }
 
-const Elements = ({
-  ref,
+const Elements = forwardRef<ElementsRef, ElementsProps>(({
   filters,
   config,
   variables,
   texts,
   events,
   useGlobalFactory = true,
-}: ElementsProps): ReactNode => {
+}, ref): ReactNode => {
   const elementsRef = useRef<Poool.EngageElement[]>([]);
   const {
     lib,
@@ -88,7 +88,7 @@ const Elements = ({
   };
 
   return null;
-};
+});
 
 Elements.displayName = 'Elements';
 

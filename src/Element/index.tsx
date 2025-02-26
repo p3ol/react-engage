@@ -7,6 +7,7 @@ import {
   useMemo,
   useEffect,
   useImperativeHandle,
+  forwardRef,
 } from 'react';
 
 import type { EngageConfigCommons } from '../types';
@@ -43,8 +44,7 @@ export interface ElementProps
   slug: string;
 }
 
-const Element = ({
-  ref,
+const Element = forwardRef<ElementRef, ElementProps>(({
   id,
   slug,
   config,
@@ -54,7 +54,7 @@ const Element = ({
   tag: Tag = 'div',
   useGlobalFactory = true,
   ...rest
-}: ElementProps) => {
+}, ref) => {
   const elementRef = useRef<Poool.EngageElement>(undefined);
   const containerRef = useRef<HTMLElement>(undefined);
   const customId = useMemo(() => generateId(), []);
@@ -101,7 +101,7 @@ const Element = ({
   return (
     <Tag ref={containerRef} id={id || customId} { ...rest } />
   );
-};
+});
 
 Element.displayName = 'Element';
 
