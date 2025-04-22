@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Elements, Element } from '@poool/react-engage';
+import Link from 'next/link';
 
 const Home = () => {
   const [mode, setMode] = useState('auto');
@@ -17,6 +18,7 @@ const Home = () => {
         Switch to { mode === 'auto' ? 'slug' : 'auto' } mode
       </button>
       { mode === 'auto' ? <Elements /> : <Element slug="react-engage" /> }
+      <p><Link href="/foo">Go to another page</Link></p>
     </div>
   );
 };
