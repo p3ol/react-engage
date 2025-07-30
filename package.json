@@ -19,7 +19,7 @@
     "examples/*"
   ],
   "dependencies": {
-    "@junipero/core": "3.10.0",
+    "@junipero/core": "3.11.0",
     "@types/poool-engage": "2.1.2"
   },
   "devDependencies": {
