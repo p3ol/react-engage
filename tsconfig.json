@@ -9,7 +9,6 @@
     "strict": false,
     "jsx": "react-jsx",
     "noEmit": true,
-    "incremental": true,
     "esModuleInterop": true,
     "types": ["jest", "node", "react", "webpack-dev-server"],
     "module": "esnext",
@@ -21,7 +20,9 @@
     "allowSyntheticDefaultImports": true
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "tsup.config.ts",
+    "jest.config.ts",
   ],
   "exclude": [
     "**/dist/*",

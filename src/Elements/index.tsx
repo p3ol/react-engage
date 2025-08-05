@@ -80,7 +80,11 @@ const Elements = forwardRef<ElementsRef, ElementsProps>(({
       mounted = false;
       destroy();
     };
-  }, [lib, globalFactory, filters, config, variables, texts, events]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    lib, globalFactory,
+    useGlobalFactory, filters, config, variables, texts, events,
+  ]);
 
   const destroy = async () => {
     return await Promise.all((elementsRef.current || [])

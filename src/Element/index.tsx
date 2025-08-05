@@ -33,7 +33,7 @@ export interface ElementProps
   /**
    * Element container tag.
    */
-  tag?: string | ElementType;
+  tag?: ElementType;
   /**
    * Whether to use the factory from `<EngageContext />` or not.
    */
@@ -94,7 +94,11 @@ const Element = forwardRef<ElementRef, ElementProps>(({
       mounted = false;
       destroy();
     };
-  }, [lib, globalFactory, slug, config, variables, texts, events]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    lib, globalFactory,
+    useGlobalFactory, slug, config, variables, texts, events,
+  ]);
 
   const destroy = () => elementRef.current?.destroy();
 

@@ -2,6 +2,7 @@ import { render, waitFor } from '@testing-library/react';
 import { useRef, useEffect } from 'react';
 
 import { withEngage } from '~/tests/utils';
+
 import Elements, { type ElementsRef } from './index';
 
 describe('<Elements />', () => {

@@ -51,14 +51,14 @@ const EngageContext = ({
 
   useEffect(() => {
     init();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const init = async () => {
     if (
       !globalThis.Engage ||
       !globalThis.Engage.isPoool ||
-      !globalThis.PooolEngage ||
-      !globalThis.PooolEngage.isPoool
+      !globalThis.PooolEngage?.isPoool
     ) {
       await loadScript(scriptUrl, 'poool-react-engage-lib', {
         timeout: scriptLoadTimeout,
@@ -130,6 +130,7 @@ const EngageContext = ({
     factory: state.factory,
     createFactory,
     commitPageView,
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }), [state.lib, state.factory]);
 
   return (

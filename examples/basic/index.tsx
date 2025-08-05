@@ -1,6 +1,6 @@
 import { useReducer } from 'react';
 import { createRoot } from 'react-dom/client';
-import { mockState, StateReducer } from '@junipero/core';
+import { mockState } from '@junipero/core';
 import { EngageContext, Element, Elements } from '@poool/react-engage';
 
 export interface AppState {
@@ -12,7 +12,7 @@ const App = () => {
     location.reload();
   }
 
-  const [state, dispatch] = useReducer<StateReducer<AppState>>(mockState, {
+  const [state, dispatch] = useReducer(mockState<AppState>, {
     mode: 'auto',
   });
 
@@ -26,7 +26,7 @@ const App = () => {
         }
         id="SwitchMode"
       >
-      Switch to { state.mode === 'auto' ? 'slug' : 'auto' } mode
+        Switch to { state.mode === 'auto' ? 'slug' : 'auto' } mode
       </button>
     </>
   );
