@@ -21,6 +21,7 @@
   },
   "include": [
     "src/**/*",
+    "tests/*.ts",
     "tsup.config.ts",
     "jest.config.ts",
   ],

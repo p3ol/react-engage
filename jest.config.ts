@@ -8,6 +8,9 @@ const config: Config = {
   },
   testEnvironment: 'jsdom',
   coverageDirectory: 'coverage',
+  setupFilesAfterEnv: [
+    '<rootDir>/tests/setup.ts',
+  ],
   coveragePathIgnorePatterns: [
     '/node_modules/',
     '/tests/',
