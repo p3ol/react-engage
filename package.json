@@ -70,6 +70,7 @@
     "test": "NODE_ENV='test' jest",
     "lint": "eslint --max-warnings=0 --cache .",
     "release": "commit-and-tag-version && git push --follow-tags",
+    "release:dry": "commit-and-tag-version --dry-run",
     "example:basic": "yarn workspace poool-react-engage-basic-example serve",
     "example:next": "yarn workspace poool-react-engage-next-example dev"
   },
