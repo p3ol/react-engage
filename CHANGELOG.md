@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [2.1.3](https://github.com/p3ol/react-engage/compare/v2.1.2...v2.1.3) (2025-08-07)
+
+
+### Bug Fixes
+
+* upgrade minimum node to 20 ([5a9273b](https://github.com/p3ol/react-engage/commit/5a9273bce93870daf96c258a748bc77d5c7c749a))
+* upgrade various deps ([4276170](https://github.com/p3ol/react-engage/commit/42761706aa948fbc64e22deda1d78f9a4f26e462))
+* upgrade various deps ([84e69c7](https://github.com/p3ol/react-engage/commit/84e69c77cc5068096cb33c019f06c7c814ab7eb3))
+* various type issues ([b5f1170](https://github.com/p3ol/react-engage/commit/b5f1170e4f948b8a630d70dea7f5341176dbb61a))
+
 ## [2.1.2](https://github.com/p3ol/react-engage/compare/v2.1.1...v2.1.2) (2025-02-26)
 
 
