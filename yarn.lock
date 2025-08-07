@@ -2003,7 +2003,6 @@ __metadata:
     jest: "npm:30.0.5"
     jest-dev-server: "npm:11.0.0"
     jest-environment-jsdom: "npm:30.0.5"
-    jest-fixed-jsdom: "npm:^0.0.9"
     puppeteer: "npm:24.15.0"
     react: "npm:19.1.1"
     react-dom: "npm:19.1.1"
@@ -8914,15 +8913,6 @@ __metadata:
     jest-util: "npm:30.0.5"
     jest-validate: "npm:30.0.5"
   checksum: 10c0/1b608597f0755814e7c24b9ed2a45abc2340cfd8f8d3691caf929f332facd9c62ac5092e7f01056708a0ca41ae0458b6d442fd1ae9f6d21b7b416b252e1ae210
-  languageName: node
-  linkType: hard
-
-"jest-fixed-jsdom@npm:^0.0.9":
-  version: 0.0.9
-  resolution: "jest-fixed-jsdom@npm:0.0.9"
-  peerDependencies:
-    jest-environment-jsdom: ">=28.0.0"
-  checksum: 10c0/908f798ccd963abc6d502f5546a13ce86c0381e32c2de2cb3efd3f47245e53223b7276555360645669181782dfd82dd69f76df41b52f4bb55e5ea4be5e2a8188
   languageName: node
   linkType: hard
 
