@@ -20,7 +20,7 @@
   ],
   "dependencies": {
     "@junipero/core": "3.11.0",
-    "@types/poool-engage": "2.1.3"
+    "@types/poool-engage": "2.2.0"
   },
   "devDependencies": {
     "@poool/eslint-config": "5.0.2",
