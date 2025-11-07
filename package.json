@@ -74,5 +74,5 @@
     "example:basic": "yarn workspace poool-react-engage-basic-example serve",
     "example:next": "yarn workspace poool-react-engage-next-example dev"
   },
-  "packageManager": "yarn@4.9.2"
+  "packageManager": "yarn@4.11.0"
 }
