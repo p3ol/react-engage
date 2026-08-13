@@ -1,5 +1,6 @@
 import { render, waitFor } from '@testing-library/react';
 import { useRef, useEffect } from 'react';
+import { vi } from 'vitest';
 
 import { withEngage } from '~/tests/utils';
 
@@ -7,7 +8,7 @@ import Element, { type ElementRef } from './index';
 
 describe('<Element />', () => {
   it('should create element at start', () => {
-    const createElement = jest.fn();
+    const createElement = vi.fn();
 
     render(withEngage(
       <Element slug="test" />,
@@ -17,8 +18,8 @@ describe('<Element />', () => {
   });
 
   it('should create element at start without global factory', () => {
-    const createElement = jest.fn();
-    const createFactory = jest.fn().mockReturnValue({ createElement });
+    const createElement = vi.fn();
+    const createFactory = vi.fn().mockReturnValue({ createElement });
 
     render(withEngage(
       <Element slug="test" useGlobalFactory={false} />,
@@ -30,7 +31,7 @@ describe('<Element />', () => {
   });
 
   it('should override configuration', () => {
-    const createFactory = jest.fn();
+    const createFactory = vi.fn();
     const config = { debug: true };
     const variables = { test: 'test' };
     const texts = { test: 'test' };
@@ -53,9 +54,9 @@ describe('<Element />', () => {
   });
 
   it('should destroy element', async () => {
-    const destroy = jest.fn().mockReturnValue(Promise.resolve());
+    const destroy = vi.fn().mockReturnValue(Promise.resolve());
     const createElement =
-      jest.fn().mockReturnValue(Promise.resolve({ destroy }));
+      vi.fn().mockReturnValue(Promise.resolve({ destroy }));
 
     const Comp = () => {
       const ref = useRef<ElementRef>(undefined);
@@ -81,8 +82,8 @@ describe('<Element />', () => {
   });
 
   it('should destroy element when component is unmounted', async () => {
-    const destroy = jest.fn().mockReturnValue(Promise.resolve());
-    const createElement = jest.fn().mockReturnValue(
+    const destroy = vi.fn().mockReturnValue(Promise.resolve());
+    const createElement = vi.fn().mockReturnValue(
       new Promise(resolve => setTimeout(() => resolve({ destroy }), 100))
     );
 

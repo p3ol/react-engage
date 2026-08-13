@@ -1,5 +1,6 @@
 import { render, waitFor } from '@testing-library/react';
 import { useRef, useEffect } from 'react';
+import { vi } from 'vitest';
 
 import { withEngage } from '~/tests/utils';
 
@@ -7,15 +8,15 @@ import Elements, { type ElementsRef } from './index';
 
 describe('<Elements />', () => {
   it('should create elements at start', () => {
-    const autoCreate = jest.fn();
+    const autoCreate = vi.fn();
 
     render(withEngage(<Elements />, { factory: { autoCreate } }));
     expect(autoCreate).toHaveBeenCalled();
   });
 
   it('should create elements at start without global factory', () => {
-    const autoCreate = jest.fn();
-    const createFactory = jest.fn().mockReturnValue({ autoCreate });
+    const autoCreate = vi.fn();
+    const createFactory = vi.fn().mockReturnValue({ autoCreate });
 
     render(withEngage(
       <Elements useGlobalFactory={false} />,
@@ -28,7 +29,7 @@ describe('<Elements />', () => {
 
   it('should create elements with custom filters', () => {
     const opts = { filters: ['test'] };
-    const autoCreate = jest.fn();
+    const autoCreate = vi.fn();
 
     render(withEngage(
       <Elements filters={opts.filters} />,
@@ -38,7 +39,7 @@ describe('<Elements />', () => {
   });
 
   it('should override configuration', () => {
-    const createFactory = jest.fn();
+    const createFactory = vi.fn();
     const config = { debug: true };
     const variables = { test: 'test' };
     const texts = { test: 'test' };
@@ -60,9 +61,9 @@ describe('<Elements />', () => {
   });
 
   it('should destroy elements', async () => {
-    const destroy = jest.fn().mockReturnValue(Promise.resolve());
+    const destroy = vi.fn().mockReturnValue(Promise.resolve());
     const autoCreate =
-      jest.fn().mockReturnValue(Promise.resolve([{ destroy }]));
+      vi.fn().mockReturnValue(Promise.resolve([{ destroy }]));
 
     const Comp = () => {
       const ref = useRef<ElementsRef>(undefined);
@@ -85,8 +86,8 @@ describe('<Elements />', () => {
   });
 
   it('should destroy elements when component is unmounted', async () => {
-    const destroy = jest.fn().mockReturnValue(Promise.resolve());
-    const autoCreate = jest.fn().mockReturnValue(
+    const destroy = vi.fn().mockReturnValue(Promise.resolve());
+    const autoCreate = vi.fn().mockReturnValue(
       new Promise(resolve => setTimeout(() => resolve([{ destroy }]), 100))
     );
 

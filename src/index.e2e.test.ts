@@ -5,7 +5,6 @@ import { Browser, Page } from 'puppeteer';
 import { createBrowser } from '~/tests/utils';
 
 describe('E2E > Engage', () => {
-  jest.setTimeout(30000);
   let server: SpawndChildProcess[];
   let browser: Browser;
 
