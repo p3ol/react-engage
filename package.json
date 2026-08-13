@@ -45,8 +45,6 @@
     "@types/react-dom": "19.2.4",
     "@types/webpack": "5.28.5",
     "@types/webpack-dev-server": "4.7.2",
-    "@typescript-eslint/eslint-plugin": "8.67.0",
-    "@typescript-eslint/parser": "8.67.0",
     "commit-and-tag-version": "13.1.2",
     "eslint": "10.8.1",
     "html-webpack-plugin": "5.6.8",
@@ -60,7 +58,7 @@
     "react-router-dom": "7.18.2",
     "swc-loader": "0.2.7",
     "ts-node": "10.9.2",
-    "tsup": "8.5.1",
+    "tsdown": "0.22.14",
     "typescript": "7.0.2",
     "webpack": "5.109.2",
     "webpack-cli": "7.2.2",
@@ -69,7 +67,7 @@
   "scripts": {
     "clean": "rm -rf ./dist || true",
     "build": "yarn clean && yarn build:code && yarn build:types",
-    "build:code": "tsup",
+    "build:code": "tsdown",
     "build:types": "tsc --project ./tsconfig.build.json",
     "prepack": "yarn build && yarn lint && yarn tsc && yarn test",
     "test": "NODE_ENV='test' jest",
@@ -79,5 +77,13 @@
     "example:basic": "yarn workspace poool-react-engage-basic-example serve",
     "example:next": "yarn workspace poool-react-engage-next-example dev"
   },
+  "targets": [
+    "chrome109",
+    "edge138",
+    "firefox140",
+    "safari18",
+    "opera80",
+    "node20"
+  ],
   "packageManager": "yarn@4.18.0"
 }
