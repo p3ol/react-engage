@@ -1,8 +1,7 @@
-import tseslint from 'typescript-eslint';
+import { defineConfig } from 'eslint/config';
 import pooolint from '@poool/eslint-config-react';
-import globals from 'globals';
 
-export default tseslint.config(
+export default defineConfig(
   { ignores: [
     'dist',
     '**/dist',
@@ -15,7 +14,6 @@ export default tseslint.config(
   {
     languageOptions: {
       globals: {
-        ...globals.browser,
         globalThis: 'readonly',
       },
       parserOptions: {
@@ -24,5 +22,5 @@ export default tseslint.config(
       },
     },
   },
-  ...pooolint.configs.recommended,
+  pooolint.configs.recommended,
 );
