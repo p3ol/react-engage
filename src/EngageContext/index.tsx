@@ -134,7 +134,7 @@ const EngageContext = ({
   }), [state.lib, state.factory]);
 
   return (
-    <Ctx.Provider value={getContext()} { ...rest } />
+    <Ctx value={getContext()} { ...rest } />
   );
 };
 

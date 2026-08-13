@@ -11,9 +11,9 @@ export const withEngage = (
     factory?: Partial<Poool.Engage>;
   } = {}
 ) => (
-  <EngageContext.Provider value={{ ...engage } as EngageContextValue}>
+  <EngageContext value={{ ...engage } as EngageContextValue}>
     { children }
-  </EngageContext.Provider>
+  </EngageContext>
 );
 
 export const createBrowser = (opts?: LaunchOptions) =>
