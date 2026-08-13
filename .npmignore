@@ -4,3 +4,7 @@ tests
 scripts
 .github
 .yarn
+.next
+*.tsbuildinfo
+commitlint.config.ts
+lefthook.yml
