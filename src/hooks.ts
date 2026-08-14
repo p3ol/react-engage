@@ -1,5 +1,5 @@
-import { use } from 'react';
+import { useContext } from 'react';
 
 import { EngageContext } from './contexts';
 
-export const useEngage = () => use(EngageContext);
+export const useEngage = () => useContext(EngageContext);
