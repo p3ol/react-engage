@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [3.0.0](https://github.com/p3ol/react-engage/compare/v2.1.3...v3.0.0) (2026-08-14)
+
+### ⚠ BREAKING CHANGES
+
+* bump minimum node to 22
+* drop es5 support
+* drop react 17 & 18 support
+* lib is now explicitly client only
+* mark package as esm first
+
+### Refactors
+
+* bump minimum node to 22 ([28186f6](https://github.com/p3ol/react-engage/commit/28186f6))
+* drop es5 support ([438c1a4](https://github.com/p3ol/react-engage/commit/438c1a4))
+* drop react 17 & 18 support ([288450b](https://github.com/p3ol/react-engage/commit/288450b))
+
+### Features
+
+* lib is now explicitly client only ([df574ba](https://github.com/p3ol/react-engage/commit/df574ba))
+
+### Bug Fixes
+
+* mark package as esm first ([6ba976b](https://github.com/p3ol/react-engage/commit/6ba976b))
+* react 18 compat ([1269f73](https://github.com/p3ol/react-engage/commit/1269f73))
+* upgrade various deps ([760c659](https://github.com/p3ol/react-engage/commit/760c659))
+
+
 ## [2.1.3](https://github.com/p3ol/react-engage/compare/v2.1.2...v2.1.3) (2025-08-07)
 
 
