@@ -2,9 +2,9 @@
   "name": "poool-react-engage-next-example",
   "dependencies": {
     "@poool/react-engage": "portal:../../",
-    "next": "16.3.0",
-    "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "next": "16.4.4",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
   },
   "scripts": {
     "dev": "next"
